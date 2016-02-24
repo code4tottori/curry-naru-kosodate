@@ -6,11 +6,13 @@
 そこで受け入れ保育施設の予約システムを構築することでスムーズな予約が可能になり、かつ施設自体の需要も確認することができると考えている。
 
 ##仕様/環境
-- Ruby On Rails 5.0 beta
+- Ruby 2.2.2
+- Ruby On Rails 5.0 beta2
 - Reactjs(ES6,babel)
 - Haml
 - Sass
 - Heroku
+
 
 ##つまづいた点とその解決方法
 
