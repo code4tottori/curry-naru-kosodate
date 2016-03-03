@@ -33,13 +33,9 @@
         <td><%= nurseries.medical_system %></td>
         <td><%= nurseries.comment %></td>
         <td><%= link_to 'Show', nurseries %></td>
-        <td><%= link_to 'Edit', edit_nurseries_path(nurseries) %></td>
-        <td><%= link_to 'Destroy', nurseries, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Nurseries', new_nurseries_path %>
