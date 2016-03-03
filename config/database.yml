@@ -24,3 +24,6 @@ production:
   <<: *default
   adapter: postgresql
   encoding: utf8
+  database: <%= ENV['database'] %>
+  username: <%= ENV['username'] %>
+  password: <%= ENV['password'] %>
