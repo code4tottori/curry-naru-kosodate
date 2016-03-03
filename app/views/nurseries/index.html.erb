@@ -5,11 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Business hours</th>
-      <th>Capacity</th>
+      <%- %w(name address phone business_hours capacity).each do |attr| -%>
+      <th><%= Nursery.human_attribute_name attr %></th>
+      <%- end -%>
       <th></th>
     </tr>
   </thead>
@@ -22,8 +20,8 @@
         <td><%= nurseries.phone %></td>
         <td><%= nurseries.business_hours %></td>
         <td><%= nurseries.capacity %></td>
-        <td><%= link_to 'Show', nurseries %></td>
-      </tr>
+        <td><%= link_to t('.show'), nurseries %></td>
+     </tr>
     <% end %>
   </tbody>
 </table>
