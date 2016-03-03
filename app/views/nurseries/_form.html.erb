@@ -1,0 +1,67 @@
+<%= form_for(nurseries) do |f| %>
+  <% if nurseries.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(nurseries.errors.count, "error") %> prohibited this nurseries from being saved:</h2>
+
+      <ul>
+      <% nurseries.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :business_hours %>
+    <%= f.text_field :business_hours %>
+  </div>
+
+  <div class="field">
+    <%= f.label :capacity %>
+    <%= f.number_field :capacity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :condition %>
+    <%= f.text_area :condition %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fee %>
+    <%= f.text_field :fee %>
+  </div>
+
+  <div class="field">
+    <%= f.label :things %>
+    <%= f.text_area :things %>
+  </div>
+
+  <div class="field">
+    <%= f.label :medical_system %>
+    <%= f.text_area :medical_system %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

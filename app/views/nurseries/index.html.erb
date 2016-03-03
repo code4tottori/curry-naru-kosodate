@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nurseries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Business hours</th>
+      <th>Capacity</th>
+      <th>Condition</th>
+      <th>Fee</th>
+      <th>Things</th>
+      <th>Medical system</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nurseries.each do |nurseries| %>
+      <tr>
+        <td><%= nurseries.name %></td>
+        <td><%= nurseries.address %></td>
+        <td><%= nurseries.phone %></td>
+        <td><%= nurseries.business_hours %></td>
+        <td><%= nurseries.capacity %></td>
+        <td><%= nurseries.condition %></td>
+        <td><%= nurseries.fee %></td>
+        <td><%= nurseries.things %></td>
+        <td><%= nurseries.medical_system %></td>
+        <td><%= nurseries.comment %></td>
+        <td><%= link_to 'Show', nurseries %></td>
+        <td><%= link_to 'Edit', edit_nurseries_path(nurseries) %></td>
+        <td><%= link_to 'Destroy', nurseries, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nurseries', new_nurseries_path %>

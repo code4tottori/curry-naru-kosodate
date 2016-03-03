@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @nurseries.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @nurseries.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @nurseries.phone %>
+</p>
+
+<p>
+  <strong>Business hours:</strong>
+  <%= @nurseries.business_hours %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @nurseries.capacity %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @nurseries.condition %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= @nurseries.fee %>
+</p>
+
+<p>
+  <strong>Things:</strong>
+  <%= @nurseries.things %>
+</p>
+
+<p>
+  <strong>Medical system:</strong>
+  <%= @nurseries.medical_system %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @nurseries.comment %>
+</p>
+
+<%= link_to 'Edit', edit_nurseries_path(@nurseries) %> |
+<%= link_to 'Back', nurseries_path %>
