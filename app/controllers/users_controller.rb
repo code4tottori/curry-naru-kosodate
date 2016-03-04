@@ -40,6 +40,14 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  # POST /users/authenticate
+  def authenticate
+    user = User.find_by_user_id(params[:user_id])
+    if user.authenticate?(params[:password])
+    else
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
