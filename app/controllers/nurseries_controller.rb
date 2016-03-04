@@ -1,5 +1,5 @@
 class NurseriesController < ApplicationController
-  before_action :set_nurseries, only: [:show, :update, :destroy]
+  before_action :set_nurseries, only: [:show]
 
   # GET /nurseries
   # GET /nurseries.json
@@ -10,34 +10,6 @@ class NurseriesController < ApplicationController
   # GET /nurseries/1
   # GET /nurseries/1.json
   def show
-  end
-
-  # POST /nurseries
-  # POST /nurseries.json
-  def create
-    @nurseries = Nursery.new(nurseries_params)
-
-    if @nurseries.save
-      render :show, status: :created, location: @nurseries
-    else
-      render json: @nurseries.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /nurseries/1
-  # PATCH/PUT /nurseries/1.json
-  def update
-    if @nurseries.update(nurseries_params)
-      render :show, status: :ok, location: @nurseries
-    else
-      render json: @nurseries.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /nurseries/1
-  # DELETE /nurseries/1.json
-  def destroy
-    @nurseries.destroy
   end
 
   private
