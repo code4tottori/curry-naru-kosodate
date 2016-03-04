@@ -4,5 +4,8 @@
   "image": "heroku/ruby",
   "repository": "https://github.com/code4tottori/curry-naru-kosodate",
   "keywords": ["ruby", "rails" ],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate db:seed"
+  },
   "addons": [ "heroku-postgresql" ]
 }
