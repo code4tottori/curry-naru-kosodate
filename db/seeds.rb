@@ -33,3 +33,5 @@ nurseries = <<-EOD
   comment: 
 EOD
 YAML.load(nurseries).each { |n| Nursery.create n }
+
+User.create(user_id: "test", password: "test", name: "鳥取太郎", email: "test@example.com", child_name: "鳥取一郎", child_birthdate: "2015-03-05", child_gender: "male")
