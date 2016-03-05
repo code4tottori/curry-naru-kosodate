@@ -42,12 +42,12 @@ class UsersController < ApplicationController
 
   # POST /users/authenticate
   def authenticate
-    @user = User.find_by_user_id(user_params[:user_id])
-    if user.authenticate?(params[:password])
+    @user = User.find_by_user_id(params[:user_id])
+    if @user.authenticate?(params[:password])
       session[:login_user] = @user.user_id
       render :show, status: :ok, location: @user
     else
-      render  status: 403
+      render text: 'Auth error', status: 403
     end
   end
 
