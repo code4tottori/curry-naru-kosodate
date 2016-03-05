@@ -8,6 +8,7 @@ class ApplicationsController < ApplicationController
       user = User.find_by_user_id(params[:user_id]) 
       @applications = Application.where(user: user) unless user.nil?
       @applications ||= []
+      @applications.each { |a| a.nursery.count_applications(a.date) }
     else
       @applications = Application.all
     end
@@ -16,6 +17,7 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
+    @application.nursery.count_applications(@application.date)
   end
 
   # POST /applications
