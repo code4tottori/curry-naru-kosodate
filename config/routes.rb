@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :applications
   resources :users do
-    post 'authenticate', to: :authenticate, on: :collection
+    collection do
+      post 'authenticate', to: :authenticate
 
-    resources :applications
+      resources :applications
+    end
   end
   resources :nurseries, only: [ :index, :show ] do
     resources :applications, only: %i[index show]
