@@ -18,6 +18,8 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
 
     if @application.save
+      @application.status = Application.where(nursery_id: @application.nursery_id, date: @application.date).count <= @application.nursery.capacity ? :appointed : :waiting
+      @application.save
       render :show, status: :created, location: @application
     else
       render json: @application.errors, status: :unprocessable_entity
@@ -48,6 +50,6 @@ class ApplicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def application_params
-      params.require(:application).permit(:date, :symptom, :comment, :user, :nursery)
+      params.require(:application).permit(:date, :symptom, :comment, :user_id, :nursery_id)
     end
 end

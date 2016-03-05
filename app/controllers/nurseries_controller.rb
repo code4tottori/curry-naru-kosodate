@@ -5,11 +5,15 @@ class NurseriesController < ApplicationController
   # GET /nurseries.json
   def index
     @nurseries = Nursery.all
+    unless params[:date].nil?
+      @nurseries.each { |n| n.count_applications(params[:date]) }
+    end
   end
 
   # GET /nurseries/1
   # GET /nurseries/1.json
   def show
+    @nurseries.count_applications(params[:date]) unless params[:date].nil?
   end
 
   private
