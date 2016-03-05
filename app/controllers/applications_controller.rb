@@ -4,7 +4,8 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.all
+    @applications = Application.where(user_id: params[:user_id]) unless params[:user_id].nil?
+    @applications ||= Application.all
   end
 
   # GET /applications/1
@@ -18,7 +19,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
 
     if @application.save
-      @application.status = Application.where(nursery_id: @application.nursery_id, date: @application.date).count <= @application.nursery.capacity ? :appointed : :waiting
+      @application.status = Application.where(nursery_id: @application.nursery_id, date: @application.date, status: :appointed).count < @application.nursery.capacity ? :appointed : :waiting
       @application.save
       render :show, status: :created, location: @application
     else
