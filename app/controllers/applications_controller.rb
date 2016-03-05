@@ -4,8 +4,13 @@ class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.where(user_id: params[:user_id]) unless params[:user_id].nil?
-    @applications ||= Application.all
+    unless params[:user_id].nil?
+      user = User.find_by_user_id(params[:user_id]) 
+      @applications = Application.where(user: user) unless user.nil?
+      @applications ||= []
+    else
+      @applications = Application.all
+    end
   end
 
   # GET /applications/1
