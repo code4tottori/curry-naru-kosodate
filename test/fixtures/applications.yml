@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-03-05
+  symptom: MyText
+  comment: MyText
+  user: 
+  nursery: 
+
+two:
+  date: 2016-03-05
+  symptom: MyText
+  comment: MyText
+  user: 
+  nursery: 
